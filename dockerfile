@@ -28,7 +28,7 @@ WORKDIR /var/www
 # Copy project files
 COPY . .
 
-# Install dependencies
+# Install PHP dependencies
 RUN composer install --optimize-autoloader --no-dev --ignore-platform-reqs || \
     composer create-project laravel/laravel tmp && cp -r tmp/* . && rm -rf tmp && \
     composer install --optimize-autoloader --no-dev --ignore-platform-reqs
